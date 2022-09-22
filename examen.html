@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="hoja_estilo.css">
+    <link rel = ”stylesheet” href = ”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css”>
+    
+    <title>Ivan_Cristhian_Paucara_Laura</title>
+    <script>
+        
+        function Registrar(){
+            var nomb = document.getElementById("ingrese_nombre").value;
+            document.getElementById("nombre").innerHTML = "¡¡" + nomb + "!!"; 
+            document.getElementById("ingrese_nombre").value = "";
+        }
+
+        function Convertir(){
+            var monto = document.getElementById("dato_convertir").value;
+            var resultado;
+            if(document.getElementById("bs").checked) {
+                resultado = (monto / 6.86).toFixed(2);
+                document.getElementById("dato_convertir").value=resultado;
+            }else if(document.getElementById("sus").checked){
+                resultado = (monto * 6.86).toFixed(2);
+                document.getElementById("dato_convertir").value=resultado;
+            }else if((document.getElementById("bs").checked) && (document.getElementById("sus").checked)){
+                alert("Debe seleccionar solo un tipo de cambio")
+            }else{
+                alert("Debe Seleccionar el tipo de cambio")
+            }
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo_nuevo.png" height = "85" width = "230" alt="">
+            <ul class="menu top">
+                <li><a href="">Sobre Nosotros</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Constacto</a></li>
+                <li><a href="">Redes Sociales</a></li>
+            </ul>
+        </header>
+        <section class="imagen">
+            <div class="img">
+                <img src="borusian.jpg" height = "404" width = "965" alt="">
+            </div>
+        </section>
+        <div class="row">
+            <div class="seccion2">
+                <h1>VENTA DE ROPA DEPORTIVA</h1>
+                <div class="log">
+                    <input type="text" id = "ingrese_nombre" placeholder="Ingrese su nombre AQUI">
+                    <button type="button" onclick="Registrar()">Iniciar Sesion</button>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Poleras</h2>
+                <img src="poleras.png" height = "203" width = "265" alt="">
+            </div>
+            <div class="col">
+                <h2>Bienvenido Cliente</h2>
+                <p id="nombre"></p>
+            </div>
+            <div class="col">
+                <h2>Zapatillas</h2>
+                <img src="tenis.png" height = "203" width = "265" alt="">
+            </div>
+        </div>
+        <footer>
+            <div class="seccion3">
+                <h1>CONVIERTE TU MONEDA</h1>
+                <input type="number" id="dato_convertir" placeholder="Ingrese monto a convertir">
+                <div class="convertir">
+                    <button type="button" onclick="Convertir()">CONVERTIR</button>
+                    <input type="checkbox" id="bs"> Bs a $us
+                    <input type="checkbox" id="sus"> $us a Bs
+                </div>
+                
+                <img src="logo_nuevo.png" height = "80" width = "80" alt="">
+                <section class="ft-main">
+                    <div class="ft-main-item">
+                      <h2 class="ft-title">Sobre</h2>
+                      <ul>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Portafolio</a></li>
+                        <li><a href="#">Precios</a></li>
+                        <li><a href="#">Clientes</a></li>
+                        <li><a href="#">Carreras</a></li>
+                      </ul>
+                    </div>
+                    <div class="ft-main-item">
+                      <h2 class="ft-title">Recursos</h2>
+                      <ul>
+                        <li><a href="#">Documentos</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">eBooks</a></li>
+                        <li><a href="#">Webinars</a></li>
+                      </ul>
+                    </div>
+                    <div class="ft-main-item">
+                      <h2 class="ft-title">Contacto</h2>
+                      <ul>
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Ventas</a></li>
+                        <li><a href="#">Anunciar</a></li>
+                      </ul>                      
+                    </div>
+                    <div class="ft-main-item">
+                        <h2 class="ft-title">Social</h2>
+                        <ul class="ft-social-list">
+                          <li><a href="#"><i class="fa-brands fa-facebook"></i>facebook</a></li>
+                          <li><a href="#"><i class="fa fa-twitter"></i>twitter</a></li>
+                          <li><a href="#"><i class="fa fa-instagram"></i>instagram</a></li>
+                          <li><a href="#"><i class="fa fa-github"></i>github</a></li>
+                          <li><a href="#"><i class="fa fa-linkedin"></i>linkedin</a></li>
+                          <li><a href="#"><i class="fa fa-youtube"></i>youtube</a></li>
+                        </ul>
+                    </div>
+                  </section>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
